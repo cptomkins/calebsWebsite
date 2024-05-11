@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    padding: 30px;
+}
+
+body {
+    font-size: 16px; /* Adjust the font size as per your requirement */
+    font-family: sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
+    color: #eee;
+    display: flex;
+    flex-direction: column; /* Stack items in a column */
+    align-items: center; /* Center vertically */
+}
+
+header {
+    width: 80%; /* Set a width as per your preference */
+    padding: 20px;
+    text-align: left;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Align items vertically */
+    width: 80%; /* Set a width as per your preference */
+}
+
+.image-container {
+    flex: 0 0 20%; /* Adjust the width as needed */
+    display: flex;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main {
+    padding: 30px;
+    max-width: 80%; /* Max width of text section */
+    text-align: left;
+}
+
+h1, h2, section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+
+h1 {
+    margin: 0;
+    color: #fff;
+    padding: 30px;
+}
+
+h2 {
+    color: #ddd;
+}

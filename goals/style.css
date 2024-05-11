@@ -1,0 +1,66 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	color: white; /* White text for contrast */
+	background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
+}
+
+header {
+	text-align: center;
+	padding: 1em 0;
+	color: #f0f0f0; /* Lighter shade of white for the header */
+}
+
+section {
+	padding: 20px;
+	margin: 20px auto;
+	max-width: 800px;
+	border-radius: 8px;
+	color: white;
+	position: relative; /* Positioning for the overlay */
+}
+
+/* Section Background Images */
+#sustainability {
+	background-image: url('sustainability.jpg');
+}
+
+#ethical-ai {
+	background-image: url('ethical_ai.png');
+}
+
+#media-mix {
+	background-image: url('media_fusion.png');
+}
+
+#community-investment {
+	background-image: url('community_investment.png');
+}
+
+#technical-innovation {
+	background-image: url('technical_innovation.png');
+}
+
+/* Image Styling and Overlay */
+section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black overlay */
+}
+
+/* Section content on top */
+section h2, section p {
+	position: relative; /* Ensure content is above the overlay */
+	z-index: 1;
+}
+
+footer {
+	text-align: center;
+	padding: 1em 0;
+	background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent black */
+}
