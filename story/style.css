@@ -1,22 +1,34 @@
-html, body {
-    height: 100%;
-    padding: 30px;
-}
-
 body {
     font-size: 16px; /* Adjust the font size as per your requirement */
     font-family: sans-serif;
     line-height: 1.8;
     margin: 0;
+    padding: 0;
     background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
     color: #eee;
     display: flex;
-    flex-direction: column; /* Stack items in a column */
-    align-items: center; /* Center vertically */
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up full viewport height */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allow the wrapper to grow and take available space */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
 }
 
 header {
-    width: 80%; /* Set a width as per your preference */
+    width: 100%; /* Ensure the header spans the full width of the container */
     padding: 20px;
     text-align: left;
 }
@@ -25,7 +37,8 @@ header {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Align items vertically */
-    width: 80%; /* Set a width as per your preference */
+    width: 100%;
+    flex: 1;
 }
 
 .image-container {
@@ -34,10 +47,10 @@ header {
     align-items: center;
 }
 
-.image-container img {
-    max-width: 100%;
-    max-height: 100%;
-}
+    .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
 main {
     padding: 30px;
@@ -47,15 +60,45 @@ main {
 
 h1, h2, section {
     margin-bottom: 30px;
-    border-bottom: 1px solid #444;
 }
 
 h1 {
-    margin: 0;
-    color: #fff;
-    padding: 30px;
+    border-bottom: 1px solid #444;
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #333; /* Dark gray */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 h2 {
     color: #ddd;
+    position: relative; /* Enable positioning for the line */
+    padding-right: 20px; /* Add some space to the right of the text */
+    display: inline-block; /* Ensure the heading's width is only as wide as its content */
+}
+
+    h2::after { /* Create the line as a pseudo-element */
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%; /* Start the line from the right edge of the heading */
+        transform: translateY(-50%); /* Vertically center the line */
+        width: calc(50vw - 100% - 20px); /* Extend the line to the right edge of the screen */
+        height: 1px;
+        margin-left: 20px; /* To cover the padding-right of h2 */
+        background-color: #444; /* Match the line's color to your design */
+    }
+
+footer {
+    width: 100%; /* Ensure the footer spans the full width of the viewport */
+    text-align: center;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent black */
 }

@@ -4,6 +4,9 @@ body {
 	padding: 0;
 	color: white; /* White text for contrast */
 	background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 header {
@@ -40,6 +43,10 @@ section {
 
 #technical-innovation {
 	background-image: url('technical_innovation.png');
+}
+
+.content-wrapper {
+	flex: 1; /* This makes the content wrapper expand and fill the available space */
 }
 
 /* Image Styling and Overlay */

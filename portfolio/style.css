@@ -1,25 +1,38 @@
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
+    color: white; /* White text for contrast */
+    background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
+    display: flex; /* Enable Flexbox layout */
+    flex-direction: column; /* Arrange elements vertically */
+    min-height: 100vh; /* Ensure the body takes up full viewport height */
 }
 
+.content-wrapper {
+    flex: 1;
+}
+
+/* Container Styling (Shared with Goals Page) */
 .container {
-    max-width: 70%;
-    margin: 0 auto;
+    max-width: 80%; /* Adjust to control width */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px;
 }
 
+/* Header Styling (Shared with Goals Page) */
 header {
-    padding-top: 20px;
     text-align: left;
+    padding: 1em 0;
 }
+
 
 h1, h2 {
     color: #ffffff;
 }
 
+
+/* Other Styles... (Your existing styles for .projects, .reels, etc.) */
 .projects ul {
     list-style: none;
     padding: 0;
@@ -36,12 +49,14 @@ h1, h2 {
 
 .reel-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around; /* Added for better spacing between videos */
+    flex-wrap: wrap; /* Allow videos to wrap if they don't fit side by side */
 }
 
 .video-container {
     padding: 10px;
-    width: 49%; /* Adjusted to ensure two videos fit side by side */
+    width: 48%; /* Adjusted to accommodate flex-wrap and potential responsiveness */
+    margin-bottom: 20px; /* Add margin for better visual separation */
 }
 
 iframe {
@@ -57,3 +72,32 @@ a {
     a:hover {
         text-decoration: underline;
     }
+
+.description {
+    padding-left: 20px; /* Adjust indentation as needed */
+    font-size: 14px; /* Adjust description font size */
+}
+
+.reel-description {
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Footer Styling (Shared with Goals Page) */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent black */
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #333; /* Dark gray */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
