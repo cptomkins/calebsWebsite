@@ -1,95 +1,117 @@
-body {
-    font-family: sans-serif;
-    line-height: 1.6;
+html, body {
+    padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom right, hsl(260, 90%, 15%), #222);
-    color: #eee;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.timeline-wrapper { /* New wrapper for vertical centering */
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center vertically */
+    min-height: 100vh; /* Make wrapper at least the viewport height */
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    width: 100%;
+.header { /* New class for header and subheader */
+    text-align: center; /* Center the header and subheader text */
+    margin-bottom: 20px; /* Add spacing below the header */
+    color: white; /* Ensure the header is white */
 }
 
-header {
-    width: 80%;
-    padding: 20px;
-    text-align: left;
-}
+    .header h1 { /* Style for the main header */
+        font-size: 3em;
+        margin-bottom: 0;
+    }
 
-.timeline-container {
-    width: 80%;
-    margin: 50px auto;
-    position: relative;
-}
+    .header h2 { /* Style for the subheader */
+        font-size: 1.5em;
+        margin-top: 5px;
+    }
 
 .timeline {
     display: flex;
-    justify-content: space-around;
-}
-
-.timeline-event {
-    flex: 0 0 30%;
-    text-align: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     position: relative;
+    width: 100%;
+    height: 300px;
+    padding: 10px 0;
 }
 
-    .timeline-event::before {
+    .timeline::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 100%;
-        background-color: #444;
-    }
-
-    .timeline-event:first-child::before {
-        height: 50%;
+        width: 90%;
+        height: 4px;
+        background-color: #444444;
         top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
     }
 
-    .timeline-event:last-child::before {
-        height: 50%;
-    }
-
-.timeline-content {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 8px;
+.container {
+    position: relative;
+    flex: 0 0 200px;
+    margin: 0 10px;
+    overflow: visible;
 }
 
-.image-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-    .image-container img {
-        max-width: 300px; /* Adjust as needed */
+    .container::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #121212;
+        border: 3px solid hsl(260, 90%, 65%);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        transition: transform 0.3s ease;
     }
 
-.home-button {
+    .container:hover::after {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+.top .content,
+.bottom .content {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-footer {
+.top .content {
+    top: -175px;
+}
+
+.bottom .content {
+    top: 20px;
+}
+
+.container:hover .content {
+    opacity: 1;
+}
+
+.content {
+    padding: 15px 20px;
+    background-color: #242424;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+    .content h2 {
+        color: hsl(260, 90%, 65%);
+    }
+
+.footer {
+    background-color: black; /* Match background color */
+    color: white; /* Ensure text is visible */
     width: 100%;
-    text-align: center;
-    padding: 1em 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-top: auto; /* Push footer to bottom */
+    text-align: center; /* Center the footer content */
+    padding: 15px 0; /* Add some padding for visual comfort */
 }
