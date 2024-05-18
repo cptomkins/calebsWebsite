@@ -1,104 +1,95 @@
 body {
-    font-size: 16px; /* Adjust the font size as per your requirement */
     font-family: sans-serif;
-    line-height: 1.8;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
+    background: linear-gradient(to bottom right, hsl(260, 90%, 15%), #222);
     color: #eee;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes up full viewport height */
+    min-height: 100vh;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Allow the wrapper to grow and take available space */
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
+    flex: 1;
+    align-items: center;
     width: 100%;
 }
 
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-}
-
 header {
-    width: 100%; /* Ensure the header spans the full width of the container */
+    width: 80%;
     padding: 20px;
     text-align: left;
 }
 
-.content-container {
+.timeline-container {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.timeline {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Align items vertically */
-    width: 100%;
-    flex: 1;
+    justify-content: space-around;
+}
+
+.timeline-event {
+    flex: 0 0 30%;
+    text-align: center;
+    position: relative;
+}
+
+    .timeline-event::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: #444;
+    }
+
+    .timeline-event:first-child::before {
+        height: 50%;
+        top: 50%;
+    }
+
+    .timeline-event:last-child::before {
+        height: 50%;
+    }
+
+.timeline-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .image-container {
-    flex: 0 0 20%; /* Adjust the width as needed */
-    display: flex;
-    align-items: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
     .image-container img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 300px; /* Adjust as needed */
     }
-
-main {
-    padding: 30px;
-    max-width: 80%; /* Max width of text section */
-    text-align: left;
-}
-
-h1, h2, section {
-    margin-bottom: 30px;
-}
-
-h1 {
-    border-bottom: 1px solid #444;
-}
 
 .home-button {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 10px 15px;
-    background-color: #333; /* Dark gray */
+    background-color: #333;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
-h2 {
-    color: #ddd;
-    position: relative; /* Enable positioning for the line */
-    padding-right: 20px; /* Add some space to the right of the text */
-    display: inline-block; /* Ensure the heading's width is only as wide as its content */
-}
-
-    h2::after { /* Create the line as a pseudo-element */
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 100%; /* Start the line from the right edge of the heading */
-        transform: translateY(-50%); /* Vertically center the line */
-        width: calc(50vw - 100% - 20px); /* Extend the line to the right edge of the screen */
-        height: 1px;
-        margin-left: 20px; /* To cover the padding-right of h2 */
-        background-color: #444; /* Match the line's color to your design */
-    }
-
 footer {
-    width: 100%; /* Ensure the footer spans the full width of the viewport */
+    width: 100%;
     text-align: center;
     padding: 1em 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: auto; /* Push footer to bottom */
 }
