@@ -4,8 +4,21 @@ html, body {
 }
 
 body {
-    background-color: #121212;
+    background: linear-gradient(to bottom right, hsl(260, 90%, 15%), black 100%);
     color: white;
+}
+
+.home-button {
+    position: fixed; /* Ensures the button stays fixed at the top-left */
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: hsl(260, 90%, 65%); /* Your purple color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove default link underline */
+    z-index: 10; /* Make sure it's above other content */
 }
 
 .timeline-wrapper { /* New wrapper for vertical centering */
@@ -106,6 +119,17 @@ body {
 
     .content h2 {
         color: hsl(260, 90%, 65%);
+    }
+
+.image-container {
+    text-align: center; /* Centers the image horizontally */
+    margin-top: 20px; /* Adds some space above the image */
+}
+
+    .image-container img {
+        max-width: 15%; /* Ensures the image doesn't overflow its container */
+        height: auto; /* Maintains aspect ratio */
+        border-radius: 5px; /* Optional: adds rounded corners */
     }
 
 .footer {

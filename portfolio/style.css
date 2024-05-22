@@ -7,6 +7,12 @@ body {
     display: flex; /* Enable Flexbox layout */
     flex-direction: column; /* Arrange elements vertically */
     min-height: 100vh; /* Ensure the body takes up full viewport height */
+    opacity: 0; /* Start with 0 opacity (hidden) */
+    transition: opacity 0.5s ease-in-out; /* Add the transition for smooth fading */
+}
+
+.fade-in { /* Class to be added after the DOM content is loaded */
+    opacity: 1; /* Make visible after the transition */
 }
 
 .content-wrapper {
@@ -26,11 +32,9 @@ header {
     padding: 1em 0;
 }
 
-
 h1, h2 {
     color: #ffffff;
 }
-
 
 /* Other Styles... (Your existing styles for .projects, .reels, etc.) */
 .projects ul {

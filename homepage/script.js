@@ -85,5 +85,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.querySelector('.rotation-display').textContent = rotationDisplayText;
             }, 50);
         });
+
+        const heading = document.querySelector('h1');
+        const subtitle = document.querySelector('.subtitle');
+        const buttonContainer = document.querySelector('.button-container');
+        const buttons = document.querySelectorAll('.button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Fade out the heading first
+                heading.style.transition = 'opacity 0.3s ease-in-out'; // Faster fade for heading
+                heading.style.opacity = 0;
+                subtitle.style.transition = 'opacity 0.3s ease-in-out';
+                subtitle.style.opacity = 0;
+
+                // Fade out the button container after a short delay
+                setTimeout(() => {
+                    buttonContainer.style.transition = 'opacity 0.5s ease-in-out';
+                    buttonContainer.style.opacity = 0;
+
+                    // Navigate after everything has faded out
+                    setTimeout(() => {
+                        window.location.href = button.href;
+                    }, 500);
+                }, 200); // 200ms delay before fading out buttons
+            });
+        });
+
     });
 });
